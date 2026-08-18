@@ -48,17 +48,17 @@
         .img-container {
             overflow: hidden;
             position: relative;
+            background-color: #1a1a1a;
         }
         .img-container img {
             transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s;
-            background-color: #1a1a1a;
         }
         .img-container:hover img {
             transform: scale(1.08);
             filter: brightness(1.1);
         }
         .img-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%);
         }
 
         /* Custom Scrollbar */
@@ -78,8 +78,8 @@
 
     <!-- Hero Section -->
     <header class="relative h-[100svh] flex flex-col items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://image.pollinations.ai/prompt/hong%20kong%20victoria%20harbour%20night%20cyberpunk%20cinematic%20drone%20shot?width=1920&height=1080&nologo=true" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
+        <div class="absolute inset-0 z-0 bg-dark">
+            <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1920&q=80" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/60 to-dark"></div>
         </div>
         
@@ -148,18 +148,18 @@
                 <!-- 4 Image Bento Grid -->
                 <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
                     <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://image.pollinations.ai/prompt/victoria%20harbour%20hong%20kong%20night%20skyline%20cinematic?width=800&height=400&nologo=true" alt="維港夜景" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1543884815-375971a826bc?auto=format&fit=crop&w=800&h=400&q=80" alt="維港夜景" class="w-full h-full object-cover">
                         <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">維多利亞港</p></div>
                     </div>
                     <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20tsim%20sha%20tsui%20neon%20street%20vibe?width=400&height=400&nologo=true" alt="尖沙咀街頭" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?auto=format&fit=crop&w=400&h=400&q=80" alt="尖沙咀街頭" class="w-full h-full object-cover">
                     </div>
                     <div class="grid grid-rows-2 gap-4 h-full">
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20airport%20terminal%20modern%20architecture?width=400&height=200&nologo=true" alt="抵達香港" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=400&h=200&q=80" alt="撈丁" class="w-full h-full object-cover">
                         </div>
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20instant%20noodles%20pork%20chop%20cheese%20sauce?width=400&height=200&nologo=true" alt="撈丁" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1555529733-0e67056058e1?auto=format&fit=crop&w=400&h=200&q=80" alt="超市採買" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -174,19 +174,19 @@
                 <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
                     <div class="grid grid-rows-2 gap-4 h-full">
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/traditional%20chinese%20wife%20cake%20bakery%20hong%20kong?width=400&height=200&nologo=true" alt="老婆餅" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1601004121774-672535090729?auto=format&fit=crop&w=400&h=200&q=80" alt="老婆餅" class="w-full h-full object-cover">
                         </div>
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20cha%20chaan%20teng%20pineapple%20bun?width=400&height=200&nologo=true" alt="菠蘿包" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&h=200&q=80" alt="菠蘿包" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20light%20rail%20yuen%20long%20street%20cinematic?width=400&height=400&nologo=true" alt="輕鐵" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">元朗特色輕鐵</p></div>
+                        <img src="https://images.unsplash.com/photo-1528659101672-039c362bf210?auto=format&fit=crop&w=400&h=400&q=80" alt="屏山文物徑" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">古蹟尋幽</p></div>
                     </div>
                     <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20street%20food%20market%20neon%20lights%20crowd?width=800&height=400&nologo=true" alt="葵廣小吃" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">小吃天堂</p></div>
+                        <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=800&h=400&q=80" alt="賞月" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">尖沙咀賞月</p></div>
                     </div>
                 </div>
 
@@ -278,20 +278,20 @@
 
                 <!-- 4 Image Bento Grid -->
                 <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1555907409-54dcb35f08cb?auto=format&fit=crop&w=800&h=400&q=80" alt="志蓮淨苑" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">志蓮淨苑</p></div>
+                    </div>
                     <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://image.pollinations.ai/prompt/dim%20sum%20shrimp%20dumpling%20har%20gow%20bamboo%20steamer?width=400&height=400&nologo=true" alt="點心" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&h=400&q=80" alt="點心" class="w-full h-full object-cover">
                     </div>
                     <div class="grid grid-rows-2 gap-4 h-full">
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/horse%20racing%20track%20hong%20kong%20action%20photography?width=400&height=200&nologo=true" alt="賽馬" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1520165977926-d668c26fc4d3?auto=format&fit=crop&w=400&h=200&q=80" alt="賽馬" class="w-full h-full object-cover">
                         </div>
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/cattle%20depot%20artist%20village%20hong%20kong%20red%20brick?width=400&height=200&nologo=true" alt="牛棚" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=200&q=80" alt="牛棚" class="w-full h-full object-cover">
                         </div>
-                    </div>
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://image.pollinations.ai/prompt/chi%20lin%20nunnery%20hong%20kong%20tang%20dynasty%20architecture%20cinematic?width=800&height=400&nologo=true" alt="志蓮淨苑" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">志蓮淨苑</p></div>
                     </div>
                 </div>
             </div>
@@ -304,19 +304,20 @@
                 <!-- 4 Image Bento Grid -->
                 <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
                     <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://image.pollinations.ai/prompt/lamma%20island%20hong%20kong%20fishing%20village%20chill%20vibe%20sunny?width=800&height=400&nologo=true" alt="南丫島" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">南丫島慢活</p></div>
+                        <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?auto=format&fit=crop&w=800&h=400&crop=top&q=80" alt="中環" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">中環漫步</p></div>
                     </div>
                     <div class="grid grid-rows-2 gap-4 h-full">
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/tai%20kwun%20hong%20kong%20heritage%20courtyard%20building?width=400&height=200&nologo=true" alt="大館" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=200&crop=bottom&q=80" alt="大館" class="w-full h-full object-cover">
                         </div>
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20sourdough%20egg%20tart%20bakery%20close%20up?width=400&height=200&nologo=true" alt="蛋撻" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&h=200&q=80" alt="蛋撻" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://image.pollinations.ai/prompt/star%20ferry%20hong%20kong%20victoria%20harbour%20daytime?width=400&height=400&nologo=true" alt="天星小輪" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1507914464560-610115049320?auto=format&fit=crop&w=400&h=400&q=80" alt="南丫島" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">南丫島慢活</p></div>
                     </div>
                 </div>
 
@@ -409,17 +410,18 @@
                 <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
                     <div class="grid grid-rows-2 gap-4 h-full">
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20supermarket%20aisle%20shopping%20snacks?width=400&height=200&nologo=true" alt="超市" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1555529733-0e67056058e1?auto=format&fit=crop&w=400&h=200&crop=left&q=80" alt="超市" class="w-full h-full object-cover">
                         </div>
                         <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://image.pollinations.ai/prompt/st%20andrews%20church%20hong%20kong%20red%20brick?width=400&height=200&nologo=true" alt="教堂" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&h=200&crop=right&q=80" alt="點心" class="w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://image.pollinations.ai/prompt/dim%20sum%20custard%20bun%20liu%20sha%20bao?width=400&height=400&nologo=true" alt="流沙包" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=400&crop=right&q=80" alt="教堂" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">百年建築</p></div>
                     </div>
                     <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20heritage%20discovery%20centre%20white%20colonial%20archway?width=800&height=400&nologo=true" alt="文物探知館" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1555907409-54dcb35f08cb?auto=format&fit=crop&w=800&h=400&crop=left&q=80" alt="文物探知館" class="w-full h-full object-cover">
                         <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">文物探知館 白堊迴廊</p></div>
                     </div>
                 </div>
