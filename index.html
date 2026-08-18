@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
 <head>
@@ -42,6 +41,11 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
 
         /* Cinematic Image Hover */
@@ -51,14 +55,14 @@
             background-color: #1a1a1a;
         }
         .img-container img {
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s;
+            transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), filter 1s;
         }
         .img-container:hover img {
             transform: scale(1.08);
             filter: brightness(1.1);
         }
         .img-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%);
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
         }
 
         /* Custom Scrollbar */
@@ -79,7 +83,8 @@
     <!-- Hero Section -->
     <header class="relative h-[100svh] flex flex-col items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 bg-dark">
-            <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=1920&q=80" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
+            <!-- Hero Image -->
+            <img src="https://image.pollinations.ai/prompt/Hong%20Kong%20Victoria%20Harbour%20night%20view%20cityscape%20cinematic%20photography?width=1920&height=1080&nologo=true" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/60 to-dark"></div>
         </div>
         
@@ -116,7 +121,7 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-plane-arrival"></i>
                                 <h4 class="font-bold tracking-wide">交通</h4>
@@ -124,7 +129,7 @@
                             <p class="text-gray-300 leading-relaxed">高雄小港機場 ➔ 香港國際機場 ➔ 城巴 A21 巴士（麼地道站下車）➔ 步行至富豪九龍酒店。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-camera"></i>
                                 <h4 class="font-bold tracking-wide">景點</h4>
@@ -132,35 +137,28 @@
                             <p class="text-gray-300 leading-relaxed">富豪九龍酒店 Check-in ➔ 樓下 Market Place 超市採買 ➔ 尖沙咀海濱長廊散策 ➔ 維多利亞港百萬夜景。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-accent">
                                 <i class="fa-solid fa-utensils"></i>
                                 <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
                             </div>
                             <div class="space-y-2 text-gray-300">
-                                <p><span class="text-white font-bold">晚餐：</span>新記冰室 (尖沙咀) — 招牌芝士汁豬扒撈丁、瑞士汁雞翼。</p>
+                                <p><span class="text-white font-bold">晚餐：</span>新記冰室 (尖沙咀麼地道店) — 招牌「芝士汁豬扒撈丁」、「瑞士汁雞翼」。</p>
                                 <p><span class="text-white font-bold">宵夜：</span>無安排 (專注休息儲備體力)。</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4 Image Bento Grid -->
-                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1543884815-375971a826bc?auto=format&fit=crop&w=800&h=400&q=80" alt="維港夜景" class="w-full h-full object-cover">
+                <!-- 2 Image Elegant Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-3 gap-4 h-[400px] md:h-[500px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl col-span-2 shadow-2xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Hong%20Kong%20Victoria%20Harbour%20night%20view%20cityscape%20cinematic%20photography?width=800&height=600&nologo=true" alt="維多利亞港夜景" class="w-full h-full object-cover">
                         <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">維多利亞港</p></div>
                     </div>
-                    <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?auto=format&fit=crop&w=400&h=400&q=80" alt="尖沙咀街頭" class="w-full h-full object-cover">
-                    </div>
-                    <div class="grid grid-rows-2 gap-4 h-full">
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=400&h=200&q=80" alt="撈丁" class="w-full h-full object-cover">
-                        </div>
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1555529733-0e67056058e1?auto=format&fit=crop&w=400&h=200&q=80" alt="超市採買" class="w-full h-full object-cover">
-                        </div>
+                    <div class="img-container rounded-3xl col-span-1 shadow-xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Hong%20Kong%20style%20instant%20noodles%20with%20pork%20chop%20and%20cheese%20sauce%20food%20photography?width=400&height=600&nologo=true" alt="芝士汁豬扒撈丁" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-4"><p class="text-white font-bold text-sm tracking-wide">招牌撈丁</p></div>
                     </div>
                 </div>
             </div>
@@ -170,23 +168,15 @@
         <section class="relative">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- 4 Image Bento Grid (Reversed layout) -->
-                <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
-                    <div class="grid grid-rows-2 gap-4 h-full">
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1601004121774-672535090729?auto=format&fit=crop&w=400&h=200&q=80" alt="老婆餅" class="w-full h-full object-cover">
-                        </div>
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&h=200&q=80" alt="菠蘿包" class="w-full h-full object-cover">
-                        </div>
+                <!-- 2 Image Elegant Grid (Reversed) -->
+                <div class="lg:col-span-7 grid grid-cols-3 gap-4 h-[400px] md:h-[500px]" data-aos="fade-right">
+                    <div class="img-container rounded-3xl col-span-1 shadow-xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/traditional%20Chinese%20wife%20cake%20pastry%20bakery%20Hong%20Kong%20food?width=400&height=600&nologo=true" alt="傳統老婆餅" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-4"><p class="text-white font-bold text-sm tracking-wide">傳統餅家</p></div>
                     </div>
-                    <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1528659101672-039c362bf210?auto=format&fit=crop&w=400&h=400&q=80" alt="屏山文物徑" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">古蹟尋幽</p></div>
-                    </div>
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=800&h=400&q=80" alt="賞月" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">尖沙咀賞月</p></div>
+                    <div class="img-container rounded-3xl col-span-2 shadow-2xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/traditional%20Chinese%20brick%20pagoda%20Ping%20Shan%20Hong%20Kong%20heritage%20trail%20sunny%20day?width=800&height=600&nologo=true" alt="屏山文物徑" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">屏山文物徑 古蹟尋幽</p></div>
                     </div>
                 </div>
 
@@ -199,31 +189,31 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-train-tram"></i>
                                 <h4 class="font-bold tracking-wide">交通 (全順向無折返)</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">屯馬綫直達天水圍站 ➔ 坑尾村站搭輕鐵直達元朗大馬路 ➔ 屯馬綫直達葵芳站 ➔ 屯馬/荃灣綫回尖沙咀。</p>
+                            <p class="text-gray-300 leading-relaxed">屯馬綫直達天水圍站 ➔ 坑尾村站搭輕鐵直達元朗大馬路 ➔ 屯馬綫直達葵芳站(葵廣) ➔ 屯馬/荃灣綫回尖沙咀。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-landmark"></i>
                                 <h4 class="font-bold tracking-wide">景點</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">屏山文物徑 (聚星樓、鄧氏宗祠) ➔ 搭乘特色輕鐵 ➔ 元朗恆香/奇華買月餅 ➔ 葵涌廣場 ➔ 尖沙咀海濱賞月。</p>
+                            <p class="text-gray-300 leading-relaxed">屏山文物徑 (聚星樓、鄧氏宗祠) ➔ 搭乘特色輕鐵體驗 ➔ 元朗大馬路 (恆香老餅家/奇華買月餅) ➔ 葵涌廣場平價小吃街 ➔ 尖沙咀海濱賞月。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-accent">
                                 <i class="fa-solid fa-utensils"></i>
                                 <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
                             </div>
                             <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>紅茶/華嫂冰室 (菠蘿油/豬扒包)</li>
-                                <li><span class="text-white font-bold">午：</span>好到底麵家 (米其林蝦子撈麵、鮮蝦水餃)</li>
-                                <li><span class="text-white font-bold">下午茶：</span>葵廣小吃 (冷麵/爆漿吐司/格仔餅)</li>
+                                <li><span class="text-white font-bold">早：</span>紅茶冰室 / 華嫂冰室 (香脆菠蘿油、豬扒包)</li>
+                                <li><span class="text-white font-bold">午：</span>好到底麵家 (米其林必比登「蝦子撈麵」、鮮蝦水餃)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>葵廣小吃 (現撈冷麵、爆漿吐司、格仔餅)</li>
                                 <li><span class="text-white font-bold">晚：</span>妹記大排檔 (避風塘炒肉蟹、脆皮炸豬手)</li>
                             </ul>
                         </div>
@@ -241,57 +231,50 @@
                     <div class="mb-8">
                         <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 03</span>
                         <h3 class="text-4xl md:text-5xl font-black text-white mb-4">園林與藝術聚落</h3>
-                        <p class="text-gray-400 text-lg">早茶 ➔ 沙田馬場 ➔ 志蓮淨苑 ➔ 土瓜灣牛棚</p>
+                        <p class="text-gray-400 text-lg">平價早茶 ➔ 沙田馬場 ➔ 志蓮淨苑 ➔ 土瓜灣牛棚</p>
                     </div>
                     
                     <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-train-subway"></i>
                                 <h4 class="font-bold tracking-wide">交通 (全順向屯馬綫)</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">港鐵上環站 ➔ 沙田馬場專綫 ➔ 鑽石山站(志蓮淨苑) ➔ 屯馬綫直達土瓜灣站 ➔ 尖東站。</p>
+                            <p class="text-gray-300 leading-relaxed">港鐵上環站 ➔ (東鐵綫馬場專綫) ➔ 沙田馬場 ➔ 鑽石山站(志蓮淨苑) ➔ 搭屯馬綫直達土瓜灣站(牛棚) ➔ 尖東站。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-ticket"></i>
                                 <h4 class="font-bold tracking-wide">景點</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">永吉街檸檬王蜜餞/香薰 ➔ 沙田馬場體驗 ➔ 志蓮淨苑與南蓮園景(唐代木造建築) ➔ 牛棚藝術村(紅磚古蹟) ➔ 十三街。</p>
+                            <p class="text-gray-300 leading-relaxed">永吉街檸檬王/兆成行香薰 ➔ 沙田馬場(賽馬日公眾席體驗) ➔ 志蓮淨苑與南蓮園景(唐代木造建築) ➔ 牛棚藝術村(百年紅磚聚落) ➔ 十三街。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-accent">
                                 <i class="fa-solid fa-utensils"></i>
                                 <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
                             </div>
                             <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>聚點坊點心 (水晶蝦餃、叉燒包、排骨)</li>
-                                <li><span class="text-white font-bold">午：</span>馬場看台快餐 (燒鴨叉燒雙拼/玫瑰豉油雞)</li>
-                                <li><span class="text-white font-bold">下午茶：</span>志蓮素軒 (品茗、洛神花凍)</li>
-                                <li><span class="text-white font-bold">晚：</span>哥登堡餐廳 (豬扒鐵板) 或 楚城海鮮飯店</li>
+                                <li><span class="text-white font-bold">早：</span>聚點坊點心 (水晶蝦餃皇、脆皮叉燒包、蒸排骨)</li>
+                                <li><span class="text-white font-bold">午：</span>沙田馬場看台餐廳 (脆皮燒鴨叉燒雙拼飯)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>志蓮素軒 (南蓮園景水月榭內品茗、素點)</li>
+                                <li><span class="text-white font-bold">晚：</span>哥登堡餐廳 (香煎豬扒鐵板) 或 楚城海鮮飯店</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4 Image Bento Grid -->
-                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1555907409-54dcb35f08cb?auto=format&fit=crop&w=800&h=400&q=80" alt="志蓮淨苑" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">志蓮淨苑</p></div>
+                <!-- 2 Image Elegant Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-3 gap-4 h-[400px] md:h-[500px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl col-span-2 shadow-2xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Chi%20Lin%20Nunnery%20Hong%20Kong%20beautiful%20Tang%20dynasty%20wooden%20temple%20architecture%20zen%20garden?width=800&height=600&nologo=true" alt="志蓮淨苑" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">志蓮淨苑 唐風園林</p></div>
                     </div>
-                    <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&h=400&q=80" alt="點心" class="w-full h-full object-cover">
-                    </div>
-                    <div class="grid grid-rows-2 gap-4 h-full">
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1520165977926-d668c26fc4d3?auto=format&fit=crop&w=400&h=200&q=80" alt="賽馬" class="w-full h-full object-cover">
-                        </div>
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=200&q=80" alt="牛棚" class="w-full h-full object-cover">
-                        </div>
+                    <div class="img-container rounded-3xl col-span-1 shadow-xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Hong%20Kong%20Sha%20Tin%20horse%20racing%20track%20action%20shot%20horses%20running?width=400&height=600&nologo=true" alt="沙田馬場" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-4"><p class="text-white font-bold text-sm tracking-wide">熱血賽馬體驗</p></div>
                     </div>
                 </div>
             </div>
@@ -301,23 +284,15 @@
         <section class="relative">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- 4 Image Bento Grid -->
-                <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?auto=format&fit=crop&w=800&h=400&crop=top&q=80" alt="中環" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">中環漫步</p></div>
+                <!-- 2 Image Elegant Grid (Reversed) -->
+                <div class="lg:col-span-7 grid grid-cols-3 gap-4 h-[400px] md:h-[500px]" data-aos="fade-right">
+                    <div class="img-container rounded-3xl col-span-1 shadow-xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/delicious%20Portuguese%20egg%20tart%20bakery%20close%20up%20food%20photography?width=400&height=600&nologo=true" alt="爆漿蛋撻" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-4"><p class="text-white font-bold text-sm tracking-wide">Bakehouse 蛋撻</p></div>
                     </div>
-                    <div class="grid grid-rows-2 gap-4 h-full">
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=200&crop=bottom&q=80" alt="大館" class="w-full h-full object-cover">
-                        </div>
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&h=200&q=80" alt="蛋撻" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1507914464560-610115049320?auto=format&fit=crop&w=400&h=400&q=80" alt="南丫島" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">南丫島慢活</p></div>
+                    <div class="img-container rounded-3xl col-span-2 shadow-2xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Lamma%20Island%20Hong%20Kong%20peaceful%20fishing%20village%20sea%20view%20boats?width=800&height=600&nologo=true" alt="南丫島" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">南丫島 榕樹灣慢活</p></div>
                     </div>
                 </div>
 
@@ -330,32 +305,32 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-ship"></i>
                                 <h4 class="font-bold tracking-wide">交通</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">天星小輪至中環 ➔ 搭渡輪直達南丫島榕樹灣 ➔ 渡輪回中環 ➔ 天星小輪回尖沙咀。</p>
+                            <p class="text-gray-300 leading-relaxed">天星碼頭搭小輪至中環 ➔ 搭渡輪直達南丫島榕樹灣 ➔ 渡輪回中環 ➔ 步行空橋 ➔ 天星小輪回尖沙咀。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-map-location-dot"></i>
                                 <h4 class="font-bold tracking-wide">景點</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">南丫島榕樹灣大街慢活 ➔ 中環街市 ➔ 大館百年古蹟群 ➔ PMQ元創方 ➔ 文武廟 ➔ 維港夜景。</p>
+                            <p class="text-gray-300 leading-relaxed">南丫島榕樹灣大街(文創慢活) ➔ 中環街市 ➔ 大館百年古蹟群 ➔ PMQ元創方 ➔ 文武廟 ➔ 沾仔記 ➔ 維港夜景。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-accent">
                                 <i class="fa-solid fa-utensils"></i>
                                 <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
                             </div>
                             <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>澳門茶餐廳 (現烤葡汁豬扒包/葡式蛋撻)</li>
-                                <li><span class="text-white font-bold">午：</span>南島書蟲(蔬食) 或 南丫天虹(海鮮)</li>
-                                <li><span class="text-white font-bold">下午茶：</span>Bakehouse爆漿蛋撻 + 蘭芳園西多士</li>
-                                <li><span class="text-white font-bold">晚：</span>沾仔記 (巨無霸鮮蝦雲吞麵)</li>
+                                <li><span class="text-white font-bold">早：</span>澳門茶餐廳 (招牌現烤葡汁豬扒包、熱絲襪奶茶)</li>
+                                <li><span class="text-white font-bold">午：</span>南島書蟲(人氣蔬食) 或 南丫天虹(蒜蓉蒸大蝦/炒蜆)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>Bakehouse 爆漿蛋撻 ＋ 蘭芳園法式西多士</li>
+                                <li><span class="text-white font-bold">晚：</span>沾仔記 (米其林必比登巨無霸鮮蝦雲吞麵)</li>
                             </ul>
                         </div>
                     </div>
@@ -376,7 +351,7 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-plane-departure"></i>
                                 <h4 class="font-bold tracking-wide">交通</h4>
@@ -384,45 +359,37 @@
                             <p class="text-gray-300 leading-relaxed">尖沙咀周邊漫步 ➔ 港鐵東涌綫直達東涌站 ➔ S1 專線巴士直達機場。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-gold">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <h4 class="font-bold tracking-wide">景點</h4>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">威菲路軍營/文物探知館(白堊迴廊) ➔ 聖安德烈堂(哥德式紅磚教堂) ➔ 東薈城 TaSTe 大型超級市場大採購。</p>
+                            <p class="text-gray-300 leading-relaxed">九龍公園前英軍威菲路軍營 ＆ 文物探知館(白堊迴廊) ➔ 聖安德烈堂(百年哥德式紅磚教堂) ➔ 東薈城 TaSTe 超市採買。</p>
                         </div>
                         
-                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex items-center gap-3 mb-2 text-accent">
                                 <i class="fa-solid fa-utensils"></i>
                                 <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
                             </div>
                             <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早午：</span>翠園 (星光行海景早茶：鮮蝦餃、流沙包)</li>
-                                <li><span class="text-white font-bold">點心：</span>蘭芳園重慶大廈分店 (西多士、豬扒包)</li>
-                                <li><span class="text-white font-bold">晚：</span>機場內餐廳 (蜜汁叉燒飯) 或 溫暖的家</li>
+                                <li><span class="text-white font-bold">早午茶：</span>翠園 (星光行海景：水晶鮮蝦餃皇、金牌流沙包)</li>
+                                <li><span class="text-white font-bold">下午點心：</span>蘭芳園重慶大廈分店 (法式西多士、香脆豬扒包)</li>
+                                <li><span class="text-white font-bold">晚：</span>香港機場內餐廳 或 抵達高雄溫暖的家</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4 Image Bento Grid -->
-                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
-                    <div class="grid grid-rows-2 gap-4 h-full">
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1555529733-0e67056058e1?auto=format&fit=crop&w=400&h=200&crop=left&q=80" alt="超市" class="w-full h-full object-cover">
-                        </div>
-                        <div class="img-container rounded-3xl shadow-xl">
-                            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=400&h=200&crop=right&q=80" alt="點心" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                    <div class="img-container rounded-3xl h-full shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?auto=format&fit=crop&w=400&h=400&crop=right&q=80" alt="教堂" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">百年建築</p></div>
-                    </div>
-                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1555907409-54dcb35f08cb?auto=format&fit=crop&w=800&h=400&crop=left&q=80" alt="文物探知館" class="w-full h-full object-cover">
+                <!-- 2 Image Elegant Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-3 gap-4 h-[400px] md:h-[500px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl col-span-2 shadow-2xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Hong%20Kong%20Heritage%20Discovery%20Centre%20white%20colonial%20architecture%20arches?width=800&height=600&nologo=true" alt="文物探知館白堊迴廊" class="w-full h-full object-cover">
                         <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">文物探知館 白堊迴廊</p></div>
+                    </div>
+                    <div class="img-container rounded-3xl col-span-1 shadow-xl h-full">
+                        <img src="https://image.pollinations.ai/prompt/Cantonese%20dim%20sum%20shrimp%20dumplings%20har%20gow%20in%20bamboo%20steamer%20food?width=400&height=600&nologo=true" alt="粵式早茶點心" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-4"><p class="text-white font-bold text-sm tracking-wide">經典粵式早茶</p></div>
                     </div>
                 </div>
             </div>
