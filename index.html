@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港再發現 | 奢華尋味之旅</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair for luxury headings, Noto Sans TC for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: '#d4af37',
+                        dark: '#0a0a0a',
+                        surface: '#171717',
+                        accent: '#e63946'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.dark'); color: #e5e5e5; }
+        
+        /* Premium Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Cinematic Image Hover */
+        .img-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .img-container img {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s;
+            background-color: #1a1a1a;
+        }
+        .img-container:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+        .img-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-dark">
+
+    <!-- Hero Section -->
+    <header class="relative h-[100svh] flex flex-col items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://image.pollinations.ai/prompt/hong%20kong%20victoria%20harbour%20night%20cyberpunk%20cinematic%20drone%20shot?width=1920&height=1080&nologo=true" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/60 to-dark"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto w-full mt-20" data-aos="zoom-out" data-aos-duration="1500">
+            <p class="font-serif text-gold tracking-[0.3em] uppercase text-sm md:text-lg mb-6 drop-shadow-lg">Hong Kong Discovery</p>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 tracking-tight font-serif drop-shadow-2xl">
+                香港<span class="text-gradient">再發現</span>
+            </h1>
+            <h2 class="text-xl md:text-3xl font-light text-gray-300 mb-12 tracking-[0.1em]">
+                美景與美食尋味之旅
+            </h2>
+        </div>
+
+        <div class="absolute bottom-12 z-20 animate-bounce">
+            <a href="#itinerary" class="text-white/50 hover:text-gold transition-colors duration-300">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Itinerary Container -->
+    <main id="itinerary" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-32">
+        
+        <!-- Day 1 -->
+        <section class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Content -->
+                <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 01</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">抵達東方之珠</h3>
+                        <p class="text-gray-400 text-lg">飯店周邊巡禮 ➔ 維港百萬夜景漫步</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-plane-arrival"></i>
+                                <h4 class="font-bold tracking-wide">交通</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">高雄小港機場 ➔ 香港國際機場 ➔ 城巴 A21 巴士（麼地道站下車）➔ 步行至富豪九龍酒店。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-camera"></i>
+                                <h4 class="font-bold tracking-wide">景點</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">富豪九龍酒店 Check-in ➔ 樓下 Market Place 超市採買 ➔ 尖沙咀海濱長廊散策 ➔ 維多利亞港百萬夜景。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-accent">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
+                            </div>
+                            <div class="space-y-2 text-gray-300">
+                                <p><span class="text-white font-bold">晚餐：</span>新記冰室 (尖沙咀) — 招牌芝士汁豬扒撈丁、瑞士汁雞翼。</p>
+                                <p><span class="text-white font-bold">宵夜：</span>無安排 (專注休息儲備體力)。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Image Bento Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://image.pollinations.ai/prompt/victoria%20harbour%20hong%20kong%20night%20skyline%20cinematic?width=800&height=400&nologo=true" alt="維港夜景" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">維多利亞港</p></div>
+                    </div>
+                    <div class="img-container rounded-3xl h-full shadow-xl">
+                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20tsim%20sha%20tsui%20neon%20street%20vibe?width=400&height=400&nologo=true" alt="尖沙咀街頭" class="w-full h-full object-cover">
+                    </div>
+                    <div class="grid grid-rows-2 gap-4 h-full">
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20airport%20terminal%20modern%20architecture?width=400&height=200&nologo=true" alt="抵達香港" class="w-full h-full object-cover">
+                        </div>
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20instant%20noodles%20pork%20chop%20cheese%20sauce?width=400&height=200&nologo=true" alt="撈丁" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 2 -->
+        <section class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- 4 Image Bento Grid (Reversed layout) -->
+                <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
+                    <div class="grid grid-rows-2 gap-4 h-full">
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/traditional%20chinese%20wife%20cake%20bakery%20hong%20kong?width=400&height=200&nologo=true" alt="老婆餅" class="w-full h-full object-cover">
+                        </div>
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20cha%20chaan%20teng%20pineapple%20bun?width=400&height=200&nologo=true" alt="菠蘿包" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="img-container rounded-3xl h-full shadow-xl">
+                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20light%20rail%20yuen%20long%20street%20cinematic?width=400&height=400&nologo=true" alt="輕鐵" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">元朗特色輕鐵</p></div>
+                    </div>
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20street%20food%20market%20neon%20lights%20crowd?width=800&height=400&nologo=true" alt="葵廣小吃" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">小吃天堂</p></div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-5" data-aos="fade-left">
+                    <div class="mb-8">
+                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 02</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">中秋古蹟巡禮</h3>
+                        <p class="text-gray-400 text-lg">屏山文物徑 ➔ 元朗老餅家 ➔ 葵廣 ➔ 賞月</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-train-tram"></i>
+                                <h4 class="font-bold tracking-wide">交通 (全順向無折返)</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">屯馬綫直達天水圍站 ➔ 坑尾村站搭輕鐵直達元朗大馬路 ➔ 屯馬綫直達葵芳站 ➔ 屯馬/荃灣綫回尖沙咀。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-landmark"></i>
+                                <h4 class="font-bold tracking-wide">景點</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">屏山文物徑 (聚星樓、鄧氏宗祠) ➔ 搭乘特色輕鐵 ➔ 元朗恆香/奇華買月餅 ➔ 葵涌廣場 ➔ 尖沙咀海濱賞月。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-accent">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                                <li><span class="text-white font-bold">早：</span>紅茶/華嫂冰室 (菠蘿油/豬扒包)</li>
+                                <li><span class="text-white font-bold">午：</span>好到底麵家 (米其林蝦子撈麵、鮮蝦水餃)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>葵廣小吃 (冷麵/爆漿吐司/格仔餅)</li>
+                                <li><span class="text-white font-bold">晚：</span>妹記大排檔 (避風塘炒肉蟹、脆皮炸豬手)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 3 -->
+        <section class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Content -->
+                <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 03</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">園林與藝術聚落</h3>
+                        <p class="text-gray-400 text-lg">早茶 ➔ 沙田馬場 ➔ 志蓮淨苑 ➔ 土瓜灣牛棚</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-train-subway"></i>
+                                <h4 class="font-bold tracking-wide">交通 (全順向屯馬綫)</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">港鐵上環站 ➔ 沙田馬場專綫 ➔ 鑽石山站(志蓮淨苑) ➔ 屯馬綫直達土瓜灣站 ➔ 尖東站。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-ticket"></i>
+                                <h4 class="font-bold tracking-wide">景點</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">永吉街檸檬王蜜餞/香薰 ➔ 沙田馬場體驗 ➔ 志蓮淨苑與南蓮園景(唐代木造建築) ➔ 牛棚藝術村(紅磚古蹟) ➔ 十三街。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-accent">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                                <li><span class="text-white font-bold">早：</span>聚點坊點心 (水晶蝦餃、叉燒包、排骨)</li>
+                                <li><span class="text-white font-bold">午：</span>馬場看台快餐 (燒鴨叉燒雙拼/玫瑰豉油雞)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>志蓮素軒 (品茗、洛神花凍)</li>
+                                <li><span class="text-white font-bold">晚：</span>哥登堡餐廳 (豬扒鐵板) 或 楚城海鮮飯店</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Image Bento Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
+                    <div class="img-container rounded-3xl h-full shadow-xl">
+                        <img src="https://image.pollinations.ai/prompt/dim%20sum%20shrimp%20dumpling%20har%20gow%20bamboo%20steamer?width=400&height=400&nologo=true" alt="點心" class="w-full h-full object-cover">
+                    </div>
+                    <div class="grid grid-rows-2 gap-4 h-full">
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/horse%20racing%20track%20hong%20kong%20action%20photography?width=400&height=200&nologo=true" alt="賽馬" class="w-full h-full object-cover">
+                        </div>
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/cattle%20depot%20artist%20village%20hong%20kong%20red%20brick?width=400&height=200&nologo=true" alt="牛棚" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://image.pollinations.ai/prompt/chi%20lin%20nunnery%20hong%20kong%20tang%20dynasty%20architecture%20cinematic?width=800&height=400&nologo=true" alt="志蓮淨苑" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">志蓮淨苑</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 4 -->
+        <section class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- 4 Image Bento Grid -->
+                <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-right">
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://image.pollinations.ai/prompt/lamma%20island%20hong%20kong%20fishing%20village%20chill%20vibe%20sunny?width=800&height=400&nologo=true" alt="南丫島" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">南丫島慢活</p></div>
+                    </div>
+                    <div class="grid grid-rows-2 gap-4 h-full">
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/tai%20kwun%20hong%20kong%20heritage%20courtyard%20building?width=400&height=200&nologo=true" alt="大館" class="w-full h-full object-cover">
+                        </div>
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20sourdough%20egg%20tart%20bakery%20close%20up?width=400&height=200&nologo=true" alt="蛋撻" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="img-container rounded-3xl h-full shadow-xl">
+                        <img src="https://image.pollinations.ai/prompt/star%20ferry%20hong%20kong%20victoria%20harbour%20daytime?width=400&height=400&nologo=true" alt="天星小輪" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-5" data-aos="fade-left">
+                    <div class="mb-8">
+                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 04</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">離島慢活與中環</h3>
+                        <p class="text-gray-400 text-lg">南丫島 ➔ 中環大館/PMQ ➔ Bakehouse</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-ship"></i>
+                                <h4 class="font-bold tracking-wide">交通</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">天星小輪至中環 ➔ 搭渡輪直達南丫島榕樹灣 ➔ 渡輪回中環 ➔ 天星小輪回尖沙咀。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <h4 class="font-bold tracking-wide">景點</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">南丫島榕樹灣大街慢活 ➔ 中環街市 ➔ 大館百年古蹟群 ➔ PMQ元創方 ➔ 文武廟 ➔ 維港夜景。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-accent">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                                <li><span class="text-white font-bold">早：</span>澳門茶餐廳 (現烤葡汁豬扒包/葡式蛋撻)</li>
+                                <li><span class="text-white font-bold">午：</span>南島書蟲(蔬食) 或 南丫天虹(海鮮)</li>
+                                <li><span class="text-white font-bold">下午茶：</span>Bakehouse爆漿蛋撻 + 蘭芳園西多士</li>
+                                <li><span class="text-white font-bold">晚：</span>沾仔記 (巨無霸鮮蝦雲吞麵)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 5 -->
+        <section class="relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Content -->
+                <div class="lg:col-span-5 order-2 lg:order-1" data-aos="fade-right">
+                    <div class="mb-8">
+                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 05</span>
+                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">殖民秘境與採買</h3>
+                        <p class="text-gray-400 text-lg">尖沙咀殖民秘境 ➔ 東薈城超市 ➔ 滿載而歸</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-plane-departure"></i>
+                                <h4 class="font-bold tracking-wide">交通</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">尖沙咀周邊漫步 ➔ 港鐵東涌綫直達東涌站 ➔ S1 專線巴士直達機場。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-gold">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <h4 class="font-bold tracking-wide">景點</h4>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">威菲路軍營/文物探知館(白堊迴廊) ➔ 聖安德烈堂(哥德式紅磚教堂) ➔ 東薈城 TaSTe 大型超級市場大採購。</p>
+                        </div>
+                        
+                        <div class="glass-card p-6 rounded-2xl hover:border-gold/30 transition-colors">
+                            <div class="flex items-center gap-3 mb-2 text-accent">
+                                <i class="fa-solid fa-utensils"></i>
+                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                                <li><span class="text-white font-bold">早午：</span>翠園 (星光行海景早茶：鮮蝦餃、流沙包)</li>
+                                <li><span class="text-white font-bold">點心：</span>蘭芳園重慶大廈分店 (西多士、豬扒包)</li>
+                                <li><span class="text-white font-bold">晚：</span>機場內餐廳 (蜜汁叉燒飯) 或 溫暖的家</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Image Bento Grid -->
+                <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 h-[600px]" data-aos="fade-left">
+                    <div class="grid grid-rows-2 gap-4 h-full">
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/hong%20kong%20supermarket%20aisle%20shopping%20snacks?width=400&height=200&nologo=true" alt="超市" class="w-full h-full object-cover">
+                        </div>
+                        <div class="img-container rounded-3xl shadow-xl">
+                            <img src="https://image.pollinations.ai/prompt/st%20andrews%20church%20hong%20kong%20red%20brick?width=400&height=200&nologo=true" alt="教堂" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="img-container rounded-3xl h-full shadow-xl">
+                        <img src="https://image.pollinations.ai/prompt/dim%20sum%20custard%20bun%20liu%20sha%20bao?width=400&height=400&nologo=true" alt="流沙包" class="w-full h-full object-cover">
+                    </div>
+                    <div class="img-container rounded-3xl col-span-2 row-span-1 h-full shadow-2xl">
+                        <img src="https://image.pollinations.ai/prompt/hong%20kong%20heritage%20discovery%20centre%20white%20colonial%20archway?width=800&height=400&nologo=true" alt="文物探知館" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 img-overlay flex items-end p-6"><p class="text-white font-bold text-lg tracking-wide">文物探知館 白堊迴廊</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-20 py-16 text-center bg-surface relative z-10">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+             <i class="fa-solid fa-plane-departure text-4xl mb-6 text-gold opacity-80"></i>
+             <h2 class="text-3xl font-serif text-white mb-4">滿載而歸 <span class="text-gold italic">保證不虛此行</span></h2>
+             <p class="text-gray-500 font-light tracking-wider mt-4">© 2026 深度之旅・香港再發現 | 圖片為情境示意，實際行程以出發前說明會為準</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 120,
+            duration: 1000,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+</html>
