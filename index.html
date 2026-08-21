@@ -1,423 +1,130 @@
-<!DOCTYPE html>
-<html lang="zh-TW" class="scroll-smooth">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>香港再發現 | 奢華尋味之旅</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans TC"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    },
-                    colors: {
-                        gold: '#d4af37',
-                        dark: '#0a0a0a',
-                        surface: '#171717',
-                        accent: '#e63946'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: theme('colors.dark'); color: #e5e5e5; }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-        }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* 圓形圖片懸停特效 */
-        .circle-img-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-            aspect-ratio: 1 / 1;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            transition: transform 0.5s ease;
-        }
-        .circle-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), filter 1s;
-        }
-        .circle-img-wrapper:hover {
-            transform: translateY(-10px);
-        }
-        .circle-img-wrapper:hover img {
-            transform: scale(1.1);
-            filter: brightness(1.15);
-        }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>香港再發現｜美景與美食尋味之旅</title>
+<meta name="description" content="香港 5 日行程｜美景與美食尋味之旅" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#182127; --muted:#6b747b; --cream:#f6f1e9; --paper:#fffdf9; --line:#e9e1d6;
+  --accent:#b74a34; --accent2:#d7a84e; --green:#405e52; --shadow:0 24px 80px rgba(34,32,28,.12);
+  --radius:26px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',system-ui,sans-serif;line-height:1.65}
+a{color:inherit}
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 7vw 7vw;color:#fff;background:#111}
+.hero::before{content:"";position:absolute;inset:0;background:
+ linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.64)),
+ url('https://www.greening.gov.hk/filemanager/greening/gallery/6/WEB---Tsim-Sha-Tsui-Promenade-and-Salisbury-Garden---20210527-_ANI0721.jpg') center/cover no-repeat;
+ transform:scale(1.03)}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:36%;background:linear-gradient(180deg,transparent,rgba(11,14,16,.88))}
+.hero-inner{position:relative;z-index:2;max-width:1080px}
+.kicker{letter-spacing:.24em;text-transform:uppercase;font-size:.78rem;opacity:.82;margin-bottom:18px}
+h1{font-family:'Noto Serif TC',serif;font-size:clamp(3.2rem,8vw,7rem);line-height:1.02;margin:0 0 16px;font-weight:700;letter-spacing:.02em}
+.hero-sub{font-size:clamp(1.15rem,2vw,1.5rem);margin:0 0 28px;opacity:.94}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-chip{padding:9px 14px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:999px;font-size:.86rem}
+.scroll-cue{position:absolute;z-index:2;right:7vw;bottom:7vw;display:flex;align-items:center;gap:10px;opacity:.85;font-size:.78rem;letter-spacing:.16em}
+.scroll-cue i{display:block;width:42px;height:1px;background:#fff}
+.shell{width:min(1220px,92vw);margin:auto}
+.intro{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;margin:70px auto 46px;align-items:end}
+.intro h2{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,4vw,3.1rem);margin:0 0 10px}.intro p{margin:0;color:var(--muted);font-size:1.05rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.fact{background:var(--paper);border:1px solid var(--line);padding:18px;border-radius:20px;box-shadow:0 10px 30px rgba(40,36,31,.05)}.fact b{display:block;font-size:1.6rem;color:var(--accent)}.fact span{font-size:.83rem;color:var(--muted)}
+.daynav{position:sticky;top:0;z-index:20;background:rgba(246,241,233,.86);backdrop-filter:blur(16px);border-block:1px solid rgba(214,205,195,.7)}
+.daynav .shell{display:flex;gap:10px;padding:12px 0;overflow:auto}.daybtn{flex:0 0 auto;border:0;background:transparent;padding:10px 14px;border-radius:999px;color:#596269;font-weight:700;cursor:pointer}.daybtn.active{background:var(--ink);color:white}
+.day{display:none;padding:56px 0 10px;scroll-margin-top:85px}.day.active{display:block}
+.day-head{display:grid;grid-template-columns:110px 1fr;gap:22px;align-items:start;margin-bottom:28px}.day-no{font-family:'Noto Serif TC',serif;font-size:4.2rem;line-height:1;color:var(--accent);font-weight:800}.day-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.35;margin:0 0 10px}.day-desc{color:var(--muted);margin:0}
+.route{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}.route span{background:#ede6dd;border:1px solid #e2d7ca;padding:7px 11px;border-radius:999px;font-size:.82rem}.route span::after{content:'→';margin-left:8px;color:var(--accent)}.route span:last-child::after{content:''}
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-bottom:22px}.photo{position:relative;min-height:330px;border-radius:var(--radius);overflow:hidden;background:#ddd;box-shadow:var(--shadow)}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo .caption{position:absolute;left:18px;bottom:18px;background:rgba(17,20,22,.72);color:#fff;padding:7px 10px;border-radius:10px;font-size:.78rem;backdrop-filter:blur(8px)}
+.glass{background:rgba(255,253,249,.82);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 14px 40px rgba(34,32,28,.07)}
+.glass h3{margin:0 0 10px;font-size:1.08rem}.glass p{margin:0;color:#5f686d}.note{display:flex;gap:10px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}.note:last-child{border-bottom:0}.note b{min-width:56px;color:var(--accent);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-bottom:32px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 32px rgba(40,36,31,.05)}.card .pic{height:210px;background:#ddd}.card .pic img{width:100%;height:100%;object-fit:cover}.card .body{padding:18px}.card .tag{font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:800}.card h4{margin:5px 0 7px;font-family:'Noto Serif TC',serif;font-size:1.3rem}.card p{margin:0;color:var(--muted);font-size:.92rem}.span-7{grid-column:span 7}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-3{grid-column:span 3}
+.timeline{position:relative;margin:20px 0 35px;padding-left:27px}.timeline::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:1px;background:#d7cdc0}.stop{position:relative;padding:0 0 22px 18px}.stop::before{content:"";position:absolute;left:-27px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--accent);box-shadow:0 0 0 4px var(--cream)}.stop strong{display:block;font-size:.94rem}.stop span{display:block;color:var(--muted);font-size:.86rem}
+.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.food{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden}.food img{height:170px;width:100%;object-fit:cover;display:block}.food .foodbody{padding:16px}.meal{font-size:.72rem;color:var(--green);font-weight:800;letter-spacing:.12em}.food h4{margin:5px 0;font-family:'Noto Serif TC',serif;font-size:1.08rem}.food p{margin:0;color:var(--muted);font-size:.88rem}.badge{display:inline-flex;margin-top:10px;padding:5px 8px;background:#eef0ea;color:#405e52;border-radius:999px;font-size:.7rem}
+.footer{margin-top:70px;background:#1a2021;color:#dfe6e3;padding:55px 0}.footer .shell{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer h3{font-family:'Noto Serif TC',serif;margin:0 0 10px;color:#fff}.footer p{margin:0;color:#aab5b2;max-width:670px;font-size:.84rem}.top{color:#fff;text-decoration:none;border:1px solid #56615e;border-radius:999px;padding:9px 13px;font-size:.8rem}
+@media (max-width:900px){.intro,.feature{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.span-7,.span-5,.span-4,.span-8,.span-6,.span-3{grid-column:span 1}.food-grid{grid-template-columns:repeat(2,1fr)}.facts{margin-top:18px}}
+@media (max-width:620px){.hero{min-height:86vh;padding:0 6vw 13vw}.scroll-cue{display:none}.day-head{grid-template-columns:70px 1fr}.day-no{font-size:3rem}.grid,.food-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr 1fr}.fact{padding:13px 10px}.fact b{font-size:1.25rem}}
+</style>
 </head>
-<body class="antialiased selection:bg-gold selection:text-dark">
+<body id="top">
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Hong Kong · 5 Days / 4 Nights</div>
+    <h1>香港再發現</h1>
+    <p class="hero-sub">美景與美食尋味之旅</p>
+    <div class="hero-meta">
+      <span class="hero-chip">📍 尖沙咀 × 元朗 × 沙田 × 南丫島 × 中環</span>
+      <span class="hero-chip">🍽 人氣名店餐食規劃</span>
+      <span class="hero-chip">🚇 全程以順向交通為核心</span>
+    </div>
+  </div>
+  <div class="scroll-cue"><i></i>SCROLL TO EXPLORE</div>
+</header>
 
-    <!-- Hero Section -->
-    <header class="relative h-[100svh] flex flex-col items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-dark">
-            <!-- 穩定的 Unsplash 維港夜景圖 -->
-            <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?q=80&w=1920&auto=format" alt="Victoria Harbour" class="w-full h-full object-cover opacity-60">
-            <div class="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/60 to-dark"></div>
-        </div>
-        
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto w-full mt-20" data-aos="zoom-out" data-aos-duration="1500">
-            <p class="font-serif text-gold tracking-[0.3em] uppercase text-sm md:text-lg mb-6 drop-shadow-lg">Hong Kong Discovery</p>
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 tracking-tight font-serif drop-shadow-2xl">
-                香港<span class="text-gradient">再發現</span>
-            </h1>
-            <h2 class="text-xl md:text-3xl font-light text-gray-300 mb-12 tracking-[0.1em]">
-                美景與美食尋味之旅
-            </h2>
-        </div>
+<section class="shell intro">
+  <div><h2>這不是景點清單，<br>而是一條會發生故事的路。</h2><p>把香港最有味道的日常串起來：清晨茶餐廳的奶茶、老街的招牌、海港夜色、百年古蹟、南丫島慢活與每一站都值得記住的餐桌。</p></div>
+  <div class="facts"><div class="fact"><b>05</b><span>天的旅程節奏</span></div><div class="fact"><b>∞</b><span>尋味與散策</span></div><div class="fact"><b>01</b><span>條不折返主軸</span></div></div>
+</section>
 
-        <div class="absolute bottom-12 z-20 animate-bounce">
-            <a href="#itinerary" class="text-white/50 hover:text-gold transition-colors duration-300">
-                <i class="fa-solid fa-chevron-down text-3xl"></i>
-            </a>
-        </div>
-    </header>
+<nav class="daynav"><div class="shell">
+<button class="daybtn active" data-day="d1">DAY 01</button><button class="daybtn" data-day="d2">DAY 02</button><button class="daybtn" data-day="d3">DAY 03</button><button class="daybtn" data-day="d4">DAY 04</button><button class="daybtn" data-day="d5">DAY 05</button>
+</div></nav>
 
-    <!-- Main Itinerary Container -->
-    <main id="itinerary" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-32">
-        
-        <!-- Day 1 -->
-        <section class="relative border-b border-white/5 pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Content -->
-                <div class="lg:col-span-6 order-2 lg:order-1" data-aos="fade-right">
-                    <div class="mb-8">
-                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 01</span>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">抵達東方之珠</h3>
-                        <p class="text-gray-400 text-lg">飯店周邊巡禮 ➔ 維港百萬夜景漫步</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-plane-arrival"></i>
-                                <h4 class="font-bold tracking-wide">交通</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">高雄小港機場 ➔ 香港國際機場 ➔ 城巴 A21 巴士（麼地道站下車）➔ 步行至富豪九龍酒店。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-camera"></i>
-                                <h4 class="font-bold tracking-wide">景點</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">富豪九龍酒店 Check-in ➔ 樓下 Market Place 超市採買 ➔ 尖沙咀海濱長廊散策 ➔ 維多利亞港百萬夜景。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-accent">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
-                            </div>
-                            <div class="space-y-2 text-gray-300">
-                                <p><span class="text-white font-bold">晚餐：</span>新記冰室 (尖沙咀) — 招牌「芝士汁豬扒撈丁」、「瑞士汁雞翼」。</p>
-                                <p><span class="text-white font-bold">宵夜：</span>無安排 (專注休息儲備體力)。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<main class="shell">
+<section id="d1" class="day active">
+  <div class="day-head"><div class="day-no">01</div><div><h2 class="day-title">抵達東方之珠 ➔ 飯店周邊巡禮 ➔ 維港百萬夜景漫步</h2><p class="day-desc">第一天不追景點，只把腳步交給尖沙咀：入住、採買、沿海散步，最後用維港夜色迎接這趟旅程。</p></div></div>
+  <div class="route"><span>高雄小港機場</span><span>香港國際機場</span><span>城巴 A21</span><span>麼地道站</span><span>富豪九龍酒店</span><span>尖沙咀海濱</span></div>
+  <div class="feature"><div class="photo"><img src="https://www.greening.gov.hk/filemanager/greening/gallery/6/WEB---Tsim-Sha-Tsui-Promenade-and-Salisbury-Garden---20210527-_ANI0721.jpg" alt="尖沙咀海濱夜景"><div class="caption">Tsim Sha Tsui Promenade · Victoria Harbour</div></div><div class="glass"><h3>今晚的節奏</h3><div class="note"><b>Check-in</b><span>富豪九龍酒店入住，放下行李後就近採買。</span></div><div class="note"><b>Market</b><span>樓下 Market Place 超市：飲料、零食、旅途補給一次備妥。</span></div><div class="note"><b>Walk</b><span>尖沙咀海濱長廊散策，慢慢看燈影倒映在維港水面。</span></div><div class="note"><b>Night</b><span>以「百萬夜景」作為旅程第一幕，不安排宵夜，留體力給明日中秋行程。</span></div></div></div>
+  <div class="grid"><article class="card span-6"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20Central%20skyline%20by%20night%20from%20Tsim%20Sha%20Tsui.jpg?width=1200" alt="香港中環夜景"></div><div class="body"><div class="tag">夜景｜必拍</div><h4>維港百萬夜景</h4><p>站在尖沙咀海濱，香港島高樓群與海面反光形成旅程第一張大景。</p></div></article>
+  <article class="card span-6"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun%20and%20milk%20tea.jpg?width=1200" alt="香港菠蘿包與奶茶"></div><div class="body"><div class="tag">晚餐｜尖沙咀</div><h4>新記冰室</h4><p>招牌芝士汁豬扒撈丁、瑞士汁雞翼；甜鹹香濃，完全避開牛魚。</p></div></article></div>
+</section>
 
-                <!-- 雙圓形排版 (Double Circles) -->
-                <div class="lg:col-span-6 order-1 lg:order-2 flex justify-center items-center gap-4 sm:gap-8 px-4" data-aos="fade-left">
-                    <div class="w-1/2 circle-img-wrapper border-4 border-white/10 transform -translate-y-8">
-                        <!-- 香港夜景/街景 -->
-                        <img src="https://images.unsplash.com/photo-1543884815-375971a826bc?q=80&w=800&auto=format" alt="維港夜景">
-                    </div>
-                    <div class="w-1/2 circle-img-wrapper border-4 border-gold/30 transform translate-y-8">
-                        <!-- 麵食/茶餐廳氛圍 -->
-                        <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=800&auto=format" alt="茶餐廳美食">
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="d2" class="day">
+  <div class="day-head"><div class="day-no">02</div><div><h2 class="day-title">【中秋古蹟】尖沙咀吃飽出發 ➔ 屏山文物徑 ➔ 元朗老餅家 ➔ 葵廣小吃 ➔ 尖沙咀賞月</h2><p class="day-desc">一整天沿著新界西側向北走：古蹟、輕鐵、老餅、平價小吃，最後回到維港賞月。</p></div></div>
+  <div class="route"><span>尖東站</span><span>天水圍站</span><span>屏山文物徑</span><span>輕鐵</span><span>元朗大馬路</span><span>葵芳／葵廣</span><span>尖沙咀</span></div>
+  <div class="feature"><div class="photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/HK%20TSW%20%E5%A4%A9%E6%B0%B4%E5%9C%8D%20Tin%20Shui%20Wai%20%E5%B1%8F%E5%B1%B1%E6%96%87%E7%89%A9%E5%BE%91%20Ping%20Shan%20Heritage%20Trail%20%E8%81%9A%E6%98%9F%E6%A8%93%20Tsui%20Sing%20Lau%20Pagoda%20November%202023%20R12S%2002.jpg?width=1200" alt="屏山文物徑聚星樓"></div><div class="glass"><h3>中秋的文化線</h3><div class="note"><b>Morning</b><span>屏山文物徑：聚星樓、鄧氏宗祠，步道平緩，適合慢慢看古蹟。</span></div><div class="note"><b>Rail</b><span>坑尾村站搭輕鐵約 10 分鐘抵元朗大馬路，體驗很有香港感的日常交通。</span></div><div class="note"><b>Yuen Long</b><span>恆香老餅家總店現做老婆餅、奇華月餅；買餅再去好到底麵家。</span></div><div class="note"><b>Moon</b><span>傍晚回尖沙咀海濱花園，把古蹟之旅收束在月光與維港。</span></div></div></div>
+  <div class="grid"><article class="card span-4"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ping%20Shan%20Heritage%20Trail%20%28Hong%20Kong%29.jpg?width=900" alt="屏山文物徑"></div><div class="body"><div class="tag">古蹟</div><h4>屏山文物徑</h4><p>聚星樓、鄧氏宗祠與新界鄉郊歷史，步行節奏舒適。</p></div></article>
+  <article class="card span-4"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun%20from%20Heung%20Heung%20Bakery%20HK.jpg?width=1000" alt="香港老餅店風格"></div><div class="body"><div class="tag">老味道</div><h4>元朗老餅家</h4><p>老婆餅、月餅與剛出爐香氣，是「尋味之旅」的重要一站。</p></div></article>
+  <article class="card span-4"><div class="pic"><img src="https://media.timeout.com/images/105774382/750/422/image.jpg" alt="葵涌廣場小吃街"></div><div class="body"><div class="tag">小吃</div><h4>葵涌廣場</h4><p>現撈冷麵、爆漿香蕉榛果朱古力吐司、流沙格仔餅，一站吃出庶民香港。</p></div></article></div>
+  <div class="food-grid"><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20Style%20Shrimp%20Dumpling.png?width=1000" alt="蝦餃"><div class="foodbody"><div class="meal">早餐</div><h4>紅茶冰室／華嫂冰室</h4><p>菠蘿油、沙嗲豬扒包或番茄濃湯豬扒通粉。</p><span class="badge">避牛魚</span></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dimsum%20breakfast%20in%20Hong%20Kong.jpg?width=1000" alt="港式點心"><div class="foodbody"><div class="meal">午餐</div><h4>好到底麵家</h4><p>蝦子撈麵、鳳城鮮蝦水餃；買完餅後步行即達。</p><span class="badge">米其林必比登</span></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Egg%20Tarts%20CC%2002%20HK.jpg?width=1000" alt="港式蛋撻"><div class="foodbody"><div class="meal">晚餐</div><h4>妹記大排檔</h4><p>鑊氣料理：脆皮炸豬手、金沙鹹蛋黃蝦球、菠蘿咕嚕肉等。</p><span class="badge">中秋賞月後</span></div></article></div>
+</section>
 
-        <!-- Day 2 -->
-        <section class="relative border-b border-white/5 pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- 雙圓形排版 (Reversed) -->
-                <div class="lg:col-span-6 flex justify-center items-center gap-4 sm:gap-8 px-4" data-aos="fade-right">
-                    <div class="w-1/2 circle-img-wrapper border-4 border-gold/30 transform -translate-y-8">
-                        <!-- 傳統糕點/月餅 -->
-                        <img src="https://images.unsplash.com/photo-1601004121774-672535090729?q=80&w=800&auto=format" alt="傳統老婆餅">
-                    </div>
-                    <div class="w-1/2 circle-img-wrapper border-4 border-white/10 transform translate-y-8">
-                        <!-- 古蹟/建築 -->
-                        <img src="https://images.unsplash.com/photo-1528659101672-039c362bf210?q=80&w=800&auto=format" alt="古蹟巡幽">
-                    </div>
-                </div>
+<section id="d3" class="day">
+  <div class="day-head"><div class="day-no">03</div><div><h2 class="day-title">上環平價早茶＆香薰蜜餞 ➔ 沙田馬場 ➔ 志蓮淨苑唐風園林 ➔ 牛棚藝術村</h2><p class="day-desc">這天是「香港的另一面」：早茶、人情味雜貨、賽馬、唐風園林與百年紅磚藝術聚落。</p></div></div>
+  <div class="route"><span>尖沙咀</span><span>上環</span><span>沙田馬場</span><span>鑽石山</span><span>土瓜灣</span><span>尖東</span></div>
+  <div class="grid"><article class="card span-5"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20-%20Chi%20Lin%20Nunnery.jpg?width=1200" alt="志蓮淨苑"></div><div class="body"><div class="tag">靜謐</div><h4>志蓮淨苑 × 南蓮園景</h4><p>全木造唐代式建築、蓮池、石橋與園林，把繁華香港切換成一段安靜留白。</p></div></article><article class="card span-7"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cattle%20Depot%20Artist%20Village%20001.jpg?width=1200" alt="牛棚藝術村紅磚建築"></div><div class="body"><div class="tag">城市文化</div><h4>牛棚藝術村 ＆ 牛棚藝術公園</h4><p>1908 年紅磚歷史建築群，從舊牛棚轉身成為藝術家工作室聚落；最後再走十三街老街。</p></div></article></div>
+  <div class="glass" style="margin-bottom:24px"><h3>一日節奏｜先熱鬧，再安靜，最後回到老城</h3><div class="timeline"><div class="stop"><strong>08:30｜聚點坊點心專門店</strong><span>蝦餃皇、蝦燒賣、叉燒包、蒸排骨、蘿蔔糕。</span></div><div class="stop"><strong>10:00｜永吉街檸檬王 × 兆成行</strong><span>蜜餞與純香薰油的小店巡禮。</span></div><div class="stop"><strong>12:00｜沙田馬場</strong><span>賽馬日公眾席體驗，午餐就地解決。</span></div><div class="stop"><strong>15:30｜志蓮淨苑</strong><span>園林、茶點、香氣，讓午後慢下來。</span></div><div class="stop"><strong>17:30｜牛棚藝術村</strong><span>老紅磚、工作室、街區漫步；晚餐安排在土瓜灣。</span></div></div></div>
+  <div class="food-grid"><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20Style%20Shrimp%20Dumpling.png?width=1000" alt="蝦餃皇"><div class="foodbody"><div class="meal">早餐</div><h4>聚點坊點心專門店</h4><p>在地感平價早茶，避開牛肉腸粉與鯪魚球。</p></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun%20and%20milk%20tea.jpg?width=1000" alt="奶茶菠蘿包"><div class="foodbody"><div class="meal">下午茶</div><h4>志蓮素軒</h4><p>洛神花凍、紅豆糕與香茶，在南蓮園景裡享用。</p></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun.jpg?width=1000" alt="香港風格麵包"><div class="foodbody"><div class="meal">晚餐</div><h4>哥登堡／楚城海鮮飯店／祥榮茶餐廳</h4><p>厚切豬扒鐵板、炸蝦拼吉列豬扒，或椒鹽豆腐、鹹蛋蒸肉餅等。</p><span class="badge">兩套方案</span></div></article></div>
+</section>
 
-                <!-- Content -->
-                <div class="lg:col-span-6" data-aos="fade-left">
-                    <div class="mb-8">
-                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 02</span>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">中秋古蹟巡禮</h3>
-                        <p class="text-gray-400 text-lg">屏山文物徑 ➔ 元朗老餅家 ➔ 葵廣 ➔ 賞月</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-train-tram"></i>
-                                <h4 class="font-bold tracking-wide">交通 (全順向無折返)</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">屯馬綫直達天水圍站 ➔ 坑尾村站搭輕鐵直達元朗大馬路 ➔ 屯馬綫直達葵芳站(葵廣) ➔ 回尖沙咀。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-landmark"></i>
-                                <h4 class="font-bold tracking-wide">景點</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">屏山文物徑 (聚星樓、鄧氏宗祠) ➔ 搭乘特色輕鐵體驗 ➔ 元朗大馬路 (恆香老餅家/奇華買月餅) ➔ 葵涌廣場 ➔ 尖沙咀賞月。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-accent">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
-                            </div>
-                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>紅茶冰室 / 華嫂冰室 (香脆菠蘿油、豬扒包)</li>
-                                <li><span class="text-white font-bold">午：</span>好到底麵家 (米其林蝦子撈麵、鮮蝦水餃)</li>
-                                <li><span class="text-white font-bold">下：</span>葵廣小吃 (現撈冷麵、爆漿吐司、格仔餅)</li>
-                                <li><span class="text-white font-bold">晚：</span>妹記大排檔 (避風塘炒肉蟹、脆皮炸豬手)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="d4" class="day">
+  <div class="day-head"><div class="day-no">04</div><div><h2 class="day-title">尖沙咀早餐 ➔ 天星小輪過海 ➔ 南丫島慢活午餐 ➔ 中環深度散策 ➔ 夜船回港</h2><p class="day-desc">整趟行程最有「度假感」的一天：海上移動、島嶼慢步、老城巷弄，再用夜色收尾。</p></div></div>
+  <div class="route"><span>尖沙咀天星碼頭</span><span>中環 7 號碼頭</span><span>南丫島榕樹灣</span><span>中環街市</span><span>大館</span><span>PMQ</span><span>文武廟</span><span>尖沙咀</span></div>
+  <div class="feature"><div class="photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yung%20Shue%20Wan%2C%20Lamma%20Island%20%28Hong%20Kong%29.jpg?width=1400" alt="南丫島榕樹灣"></div><div class="glass"><h3>15:00 之後，把城市走成一條電影長鏡頭</h3><div class="note"><b>Sea</b><span>天星小輪晨景：把維港當作交通工具，也當作風景。</span></div><div class="note"><b>Island</b><span>榕樹灣大街文創小店、手作選物與海傍定點午餐。</span></div><div class="note"><b>Central</b><span>中環街市 → 大館 → PMQ → 文武廟 → 石板街。</span></div><div class="note"><b>Night</b><span>Bakehouse 與蘭芳園之後，吃完沾仔記再搭天星小輪看夜景。</span></div></div></div>
+  <div class="grid"><article class="card span-4"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Central%20Market.jpg?width=1000" alt="中環街市"></div><div class="body"><div class="tag">城市建築</div><h4>中環街市</h4><p>空橋接上荷李活道，把舊市場、古蹟與設計商店串成一段步行。</p></div></article><article class="card span-4"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Man%20Mo%20Temple%20in%20Hong%20Kong%20%286847500820%29.jpg?width=1000" alt="文武廟"></div><div class="body"><div class="tag">香火</div><h4>文武廟</h4><p>螺旋盤香、古廟木雕與石板街，是中環散策最有味道的一站。</p></div></article><article class="card span-4"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Egg%20Tarts%20CC%2002%20HK.jpg?width=1000" alt="香港蛋撻"></div><div class="body"><div class="tag">下午茶</div><h4>Bakehouse × 蘭芳園</h4><p>酸麵包爆漿蛋撻、絲襪奶茶、西多士，把中環的午後變得很有香氣。</p></div></article></div>
+  <div class="food-grid"><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun%20and%20milk%20tea.jpg?width=1000" alt="港式早餐"><div class="foodbody"><div class="meal">早餐</div><h4>澳門茶餐廳／澳洲牛奶公司</h4><p>葡汁豬扒包、葡式蛋撻、絲襪奶茶；早晨不趕路。</p></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yung%20Shue%20Wan%2C%20Lamma%20Island%20%28Hong%20Kong%29.jpg?width=1000" alt="南丫島"><div class="foodbody"><div class="meal">午餐</div><h4>南島書蟲／南丫天虹</h4><p>可選蔬食薄餅、鮮蔬派、果昔，或大蝦、椒鹽鮮魷與時蔬。</p><span class="badge">島嶼慢活</span></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20Style%20Shrimp%20Dumpling.png?width=1000" alt="蝦餃與雲吞麵風格"><div class="foodbody"><div class="meal">晚餐</div><h4>沾仔記</h4><p>巨無霸鮮蝦雲吞麵或鮮蝦水餃麵，搭配蝦子油菜後走向碼頭。</p><span class="badge">米其林必比登</span></div></article></div>
+</section>
 
-        <!-- Day 3 -->
-        <section class="relative border-b border-white/5 pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Content -->
-                <div class="lg:col-span-6 order-2 lg:order-1" data-aos="fade-right">
-                    <div class="mb-8">
-                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 03</span>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">園林與藝術聚落</h3>
-                        <p class="text-gray-400 text-lg">平價早茶 ➔ 沙田馬場 ➔ 志蓮淨苑 ➔ 土瓜灣牛棚</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-train-subway"></i>
-                                <h4 class="font-bold tracking-wide">交通 (全順向屯馬綫)</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">港鐵上環站 ➔ 沙田馬場專綫 ➔ 鑽石山站(志蓮淨苑) ➔ 搭屯馬綫直達土瓜灣站(牛棚) ➔ 尖東站。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-ticket"></i>
-                                <h4 class="font-bold tracking-wide">景點</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">檸檬王/兆成行香薰 ➔ 沙田馬場公眾席體驗 ➔ 志蓮淨苑與南蓮園景(唐代木造建築) ➔ 牛棚藝術村(百年紅磚聚落)。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-accent">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
-                            </div>
-                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>聚點坊點心 (水晶蝦餃皇、脆皮叉燒包、蒸排骨)</li>
-                                <li><span class="text-white font-bold">午：</span>沙田馬場看台餐廳 (脆皮燒鴨叉燒雙拼飯)</li>
-                                <li><span class="text-white font-bold">下：</span>志蓮素軒 (南蓮園景水月榭內品茗、素點)</li>
-                                <li><span class="text-white font-bold">晚：</span>哥登堡餐廳 (香煎豬扒鐵板) 或 楚城海鮮飯店</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<section id="d5" class="day">
+  <div class="day-head"><div class="day-no">05</div><div><h2 class="day-title">睡飽早午茶 ➔ 尖沙咀殖民秘境 ➔ 東薈城採買 ➔ 香港國際機場返台</h2><p class="day-desc">最後一天故意放慢：先睡飽，再把尖沙咀的老建築走完，最後一次把香港味道裝進行李箱。</p></div></div>
+  <div class="route"><span>尖沙咀</span><span>星光行</span><span>威菲路軍營</span><span>香港文物探知館</span><span>聖安德烈堂</span><span>東涌</span><span>機場</span></div>
+  <div class="grid"><article class="card span-7"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Central%20Market%2CCentral%2CHong%20Kong.jpg?width=1400" alt="香港殖民風格建築"></div><div class="body"><div class="tag">最後一章</div><h4>尖沙咀殖民秘境</h4><p>威菲路軍營、香港文物探知館與聖安德烈堂，讓旅程從霓虹回到百年建築的靜謐。</p></div></article><article class="card span-5"><div class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hong%20Kong%20style%20milk%20tea%20and%20Pineapple%20bun%20with%20butter.jpg?width=1000" alt="香港奶茶與菠蘿包"></div><div class="body"><div class="tag">伴手禮</div><h4>TaSTe 超市大採購</h4><p>奶茶包、鴛鴦包、零食與伴手禮，為這段旅程留下「可帶回家」的味道。</p></div></article></div>
+  <div class="glass"><h3>返台前的小儀式</h3><div class="timeline"><div class="stop"><strong>睡到自然醒</strong><span>不再追景點，讓最後一天留白。</span></div><div class="stop"><strong>翠園 Jade Garden｜星光行海傍</strong><span>水晶蝦餃、蝦燒賣、叉燒、鳳爪、鮮竹卷、流沙包。</span></div><div class="stop"><strong>香港文物探知館 × 聖安德烈堂</strong><span>平坦、安靜、免費或低門檻的殖民建築散策。</span></div><div class="stop"><strong>東薈城 × TaSTe</strong><span>最後一次採買，接著由東涌線 → S1 前往機場。</span></div></div></div>
+  <div class="food-grid" style="margin-top:24px"><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dimsum%20breakfast%20in%20Hong%20Kong.jpg?width=1000" alt="香港早茶"><div class="foodbody"><div class="meal">早午餐</div><h4>翠園 Jade Garden</h4><p>經典老字號粵式早午茶，把最後一餐留給熱騰騰的蒸籠。</p></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Two%20Egg%20Tarts%20CC%2002%20HK.jpg?width=1000" alt="蛋撻"><div class="foodbody"><div class="meal">下午點心</div><h4>蘭芳園｜尖沙咀</h4><p>法式西多士、熱絲襪奶茶、香脆豬扒包，作為返台前的小小告別。</p></div></article><article class="food"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pineapple%20bun.jpg?width=1000" alt="菠蘿包"><div class="foodbody"><div class="meal">晚餐</div><h4>香港國際機場</h4><p>可選何洪記鮮蝦雲吞麵、蜜汁叉燒飯；或直接抵達高雄，回到溫暖的家。</p></div></article></div>
+</section>
+</main>
 
-                <!-- 雙圓形排版 -->
-                <div class="lg:col-span-6 order-1 lg:order-2 flex justify-center items-center gap-4 sm:gap-8 px-4" data-aos="fade-left">
-                    <div class="w-1/2 circle-img-wrapper border-4 border-white/10 transform -translate-y-8">
-                        <!-- 寺廟/志蓮淨苑氛圍 -->
-                        <img src="https://images.unsplash.com/photo-1555907409-54dcb35f08cb?q=80&w=800&auto=format" alt="志蓮淨苑">
-                    </div>
-                    <div class="w-1/2 circle-img-wrapper border-4 border-gold/30 transform translate-y-8">
-                        <!-- 蒸籠點心 -->
-                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format" alt="精緻點心">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Day 4 -->
-        <section class="relative border-b border-white/5 pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- 雙圓形排版 (Reversed) -->
-                <div class="lg:col-span-6 flex justify-center items-center gap-4 sm:gap-8 px-4" data-aos="fade-right">
-                    <div class="w-1/2 circle-img-wrapper border-4 border-gold/30 transform -translate-y-8">
-                        <!-- 蛋撻 -->
-                        <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=800&auto=format" alt="爆漿蛋撻">
-                    </div>
-                    <div class="w-1/2 circle-img-wrapper border-4 border-white/10 transform translate-y-8">
-                        <!-- 島嶼/海洋 -->
-                        <img src="https://images.unsplash.com/photo-1507914464560-610115049320?q=80&w=800&auto=format" alt="南丫島慢活">
-                    </div>
-                </div>
-
-                <!-- Content -->
-                <div class="lg:col-span-6" data-aos="fade-left">
-                    <div class="mb-8">
-                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 04</span>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">離島慢活與中環</h3>
-                        <p class="text-gray-400 text-lg">南丫島 ➔ 中環大館/PMQ ➔ Bakehouse</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-ship"></i>
-                                <h4 class="font-bold tracking-wide">交通</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">天星碼頭搭小輪至中環 ➔ 搭渡輪直達南丫島 ➔ 渡輪回中環 ➔ 步行空橋 ➔ 天星小輪回尖沙咀。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                                <h4 class="font-bold tracking-wide">景點</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">南丫島榕樹灣大街(文創慢活) ➔ 中環街市 ➔ 大館百年古蹟群 ➔ PMQ元創方 ➔ 文武廟 ➔ 沾仔記 ➔ 維港夜景。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-accent">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
-                            </div>
-                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早：</span>澳門茶餐廳 (招牌現烤葡汁豬扒包、熱絲襪奶茶)</li>
-                                <li><span class="text-white font-bold">午：</span>南島書蟲(人氣蔬食) 或 南丫天虹(蒜蓉蒸大蝦/炒蜆)</li>
-                                <li><span class="text-white font-bold">下：</span>Bakehouse 爆漿蛋撻 ＋ 蘭芳園法式西多士</li>
-                                <li><span class="text-white font-bold">晚：</span>沾仔記 (米其林必比登巨無霸鮮蝦雲吞麵)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Day 5 -->
-        <section class="relative">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Content -->
-                <div class="lg:col-span-6 order-2 lg:order-1" data-aos="fade-right">
-                    <div class="mb-8">
-                        <span class="text-gold font-serif text-xl tracking-widest block mb-2">Day 05</span>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">殖民秘境與採買</h3>
-                        <p class="text-gray-400 text-lg">尖沙咀殖民秘境 ➔ 東薈城超市 ➔ 滿載而歸</p>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-plane-departure"></i>
-                                <h4 class="font-bold tracking-wide">交通</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">尖沙咀周邊漫步 ➔ 港鐵東涌綫直達東涌站 ➔ S1 專線巴士直達機場。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-gold">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <h4 class="font-bold tracking-wide">景點</h4>
-                            </div>
-                            <p class="text-gray-300 leading-relaxed">九龍公園前英軍威菲路軍營 ＆ 文物探知館(白堊迴廊) ➔ 聖安德烈堂(百年教堂) ➔ 東薈城 TaSTe 超市採買。</p>
-                        </div>
-                        
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="flex items-center gap-3 mb-2 text-accent">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h4 class="font-bold tracking-wide">餐食 (無牛魚)</h4>
-                            </div>
-                            <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                                <li><span class="text-white font-bold">早午：</span>翠園 (星光行海景：水晶鮮蝦餃皇、金牌流沙包)</li>
-                                <li><span class="text-white font-bold">下：</span>蘭芳園重慶大廈分店 (法式西多士、香脆豬扒包)</li>
-                                <li><span class="text-white font-bold">晚：</span>香港機場內餐廳 或 抵達高雄溫暖的家</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 雙圓形排版 -->
-                <div class="lg:col-span-6 order-1 lg:order-2 flex justify-center items-center gap-4 sm:gap-8 px-4" data-aos="fade-left">
-                    <div class="w-1/2 circle-img-wrapper border-4 border-white/10 transform -translate-y-8">
-                        <!-- 白色古蹟建築 -->
-                        <img src="https://images.unsplash.com/photo-1558913917-76b6d859ad33?q=80&w=800&auto=format" alt="白堊迴廊">
-                    </div>
-                    <div class="w-1/2 circle-img-wrapper border-4 border-gold/30 transform translate-y-8">
-                        <!-- 購物/市集 -->
-                        <img src="https://images.unsplash.com/photo-1555529733-0e67056058e1?q=80&w=800&auto=format" alt="超市採買">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 mt-20 py-16 text-center bg-surface relative z-10">
-        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
-             <i class="fa-solid fa-plane-departure text-4xl mb-6 text-gold opacity-80"></i>
-             <h2 class="text-3xl font-serif text-white mb-4">滿載而歸 <span class="text-gold italic">保證不虛此行</span></h2>
-             <p class="text-gray-500 font-light tracking-wider mt-4">© 2026 深度之旅・香港再發現 | 圖片為AI情境示意</p>
-        </div>
-    </footer>
-
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 120,
-            duration: 1000,
-            easing: 'ease-out-cubic',
-        });
-    </script>
+<footer class="footer"><div class="shell"><div><h3>香港再發現 · 美景與美食尋味之旅</h3><p>圖片來源：ＡＩ與網路公開影像。</p></div><a class="top" href="#top">↑ 回到頂端</a></div></footer>
+<script>
+const buttons=[...document.querySelectorAll('.daybtn')]; const sections=[...document.querySelectorAll('.day')];
+buttons.forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.day;buttons.forEach(b=>b.classList.toggle('active',b===btn));sections.forEach(s=>s.classList.toggle('active',s.id===id));document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}));
+// Friendly fallback: if a remote photo is temporarily unavailable, keep the visual card alive.
+document.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>{img.style.display='none'; img.parentElement.style.background='linear-gradient(135deg,#d5c7b7,#9f8f80)';}));
+</script>
 </body>
 </html>
